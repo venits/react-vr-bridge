@@ -20,13 +20,6 @@ Next in our **init()** function at the beginning put this line:
  ```js
     const bridgeModule = new BridgeModule(messageReceiver);
  ```
- Also at the end of **init()** function just before **vr.start()** put this line:
- ```js
-    bridgeModule.init(vr.rootView.context);
-    vr.start();
-    return vr;
-  }
- ```
  
 **messageReceiver** is our listener that will be receiving our messages from Main Thread.
 
@@ -36,6 +29,14 @@ Next in our **init()** function at the beginning put this line:
       console.warn('Message from Main Thread', message);
     };
 ```
+
+Also at the end of **init()** function just before **vr.start()** put this line:
+ ```js
+    bridgeModule.init(vr.rootView.context);
+    vr.start();
+    return vr;
+  }
+ ```
 
 2. In **index.vr.js** (or other place from where you want to send messages):
 
