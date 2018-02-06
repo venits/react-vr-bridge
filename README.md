@@ -84,7 +84,7 @@ We will be using it to send messages to Main Thread.
 *To test if everything works we can put this code somewhere in **init()** function:*
 ```js
     setTimeout(() => {
-        bridgeModule.sendMessage('test message');
+        bridgeModule.sendMessageToMainThread('test message');
     }, 3000);
 ```
 *After 3 seconds after your listener should fire up with your message.*
