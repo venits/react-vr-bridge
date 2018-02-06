@@ -14,7 +14,7 @@ Module for simple communication between Web Worker and Main UI Thread in React-V
 
 1. In **vr/client.js** add following lines:
  ```js
-    import { BridgeModule } from 'react-vr-bridge'
+    import BridgeModule from 'react-vr-bridge/BridgeModule'
  ```
 Next in our **init()** function at the beginning put this line:
  ```js
@@ -65,7 +65,7 @@ Also at the end of **init()** function just before **vr.start()** put this line:
 
 *Add those lines at the beginning of the file:*
 ```js
-    import { BrowserBridge } from 'react-vr-bridge';
+    import BrowserBridge from 'react-vr-bridge/BrowserBridge';
 ```
 
 *Now we have to set **listener** that will be receiving messages from Web Worker.
@@ -77,7 +77,7 @@ In my case this line is in **constructor()***:
 
 2.  In **vr/client.js** at this point you should have this class imported: 
  ```js
-    import { BridgeModule } from 'react-vr-bridge'
+    import BridgeModule from 'react-vr-bridge/BridgeModule'
  ```
 We will be using it to send messages to Main Thread. 
 
