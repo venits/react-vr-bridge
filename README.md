@@ -29,6 +29,7 @@ Next in our **init()** function at the beginning put this line:
  ```
  
 **messageReceiver** is our listener that will be receiving our messages from Main Thread.
+
 *It can for example look like this:*
 ```js
     messageReceiver = (message) => {
@@ -37,11 +38,13 @@ Next in our **init()** function at the beginning put this line:
 ```
 
 2. In **index.vr.js** (or other place from where you want to send messages):
+
 *Add those lines at the beginning of the file:*
 ```js
     import { NativeModules } from 'react-vr';
     const BridgeModule = NativeModules.BridgeModule;
 ```
+
 *Now to send messages all you have to do is:*
 ```js
     BridgeModule.sendMessageToWebWorker('1234');
@@ -50,12 +53,14 @@ Next in our **init()** function at the beginning put this line:
 ### Sending messages from Web Worker to Main Thread
 
 1.  In **index.vr.js** (or other place from where you want to receive messages):
+
 *Add those lines at the beginning of the file:*
 ```js
     import { BrowserBridge } from 'react-vr-bridge';
 ```
 
 *Now we have to set **listener** that will be receiving messages from Web Worker.
+
 In my case this line is in **constructor()***: 
 ```js
     BrowserBridge.setListener(message => console.warn(message));
@@ -66,6 +71,7 @@ In my case this line is in **constructor()***:
     import { BridgeModule } from 'react-vr-bridge'
  ```
 We will be using it to send messages to Main Thread. 
+
 *To test if everything works we can put this code somewhere in **init()** function:*
 ```js
     setTimeout(() => {
