@@ -30,6 +30,14 @@ Next in our **init()** function at the beginning put this line:
     };
 ```
 
+We need to add our module to NativeModules.
+```js
+  const vr = new VRInstance(bundle, 'your-vr-app-name', parent, {
+      nativeModules: [bridgeModule],
+    ...options,
+  });
+```
+
 Also at the end of **init()** function just before **vr.start()** put this line:
  ```js
     bridgeModule.init(vr.rootView.context);
