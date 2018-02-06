@@ -68,9 +68,9 @@ Also at the end of **init()** function just before **vr.start()** put this line:
     import BrowserBridge from 'react-vr-bridge/BrowserBridge';
 ```
 
-*Now we have to set **listener** that will be receiving messages from Web Worker.
+Now we have to set **listener** that will be receiving messages from Web Worker.
 
-In my case this line is in **constructor()***: 
+*In my case this line is in **constructor()***: 
 ```js
     BrowserBridge.setListener(message => console.warn(message));
 ```
